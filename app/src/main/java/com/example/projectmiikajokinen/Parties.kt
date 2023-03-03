@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectmiikajokinen.databinding.FragmentPartiesBinding
 
-class parties : Fragment() {
+class Parties : Fragment() {
     private lateinit var binding: FragmentPartiesBinding
     private lateinit var viewModel: PartyActivityViewModel
 

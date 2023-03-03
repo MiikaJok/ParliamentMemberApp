@@ -21,7 +21,9 @@ class PartiesAdapter(val parties: List<String>) : RecyclerView.Adapter<PartiesVi
     override fun onBindViewHolder(holder: PartiesViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.PartyText).apply{
             text = parties[position]
-            setOnClickListener{
+            setOnClickListener {
+                val action = PartiesDirections.actionPartiesToPartyMembers()
+                it.findNavController().navigate(action)
             }
         }
     }

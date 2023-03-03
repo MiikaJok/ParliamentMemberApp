@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_main_view">
         <action
             android:id="@+id/action_mainView_to_parties"
-            app:destination="@id/parties" />
+            app:destination="@id/Parties" />
         <action
             android:id="@+id/action_mainView_to_everyMember"
             app:destination="@id/everyMember" />
@@ -32,8 +32,8 @@
             app:destination="@id/singleMember" />
     </fragment>
     <fragment
-        android:id="@+id/parties"
-        android:name="com.example.projectmiikajokinen.parties"
+        android:id="@+id/Parties"
+        android:name="com.example.projectmiikajokinen.Parties"
         android:label="fragment_parties"
         tools:layout="@layout/fragment_parties">
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/partyMembers"
-        android:name="com.example.projectmiikajokinen.partyMembers"
+        android:name="com.example.projectmiikajokinen.PartyMembers"
         android:label="fragment_party_members"
         tools:layout="@layout/fragment_party_members">
         <action

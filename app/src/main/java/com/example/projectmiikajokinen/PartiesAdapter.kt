@@ -2,6 +2,8 @@ package com.example.projectmiikajokinen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectmiikajokinen.databinding.PartyitemlistBinding
 
@@ -17,7 +19,10 @@ class PartiesAdapter(val parties: List<String>) : RecyclerView.Adapter<PartiesVi
     }
 
     override fun onBindViewHolder(holder: PartiesViewHolder, position: Int) {
-        val party = parties[position]
-        holder.bind(party)
+        holder.itemView.findViewById<TextView>(R.id.PartyText).apply{
+            text = parties[position]
+            setOnClickListener{
+            }
+        }
     }
 }

@@ -24,28 +24,37 @@ class mainView : Fragment() {
     ): View? {
         binding = FragmentMainViewBinding.inflate(layoutInflater)
         viewModel = MainActivityVM()
-        binding.buttonParties.setOnClickListener {
+        binding.buttonParties.setOnClickListener{
             findNavController().navigate(R.id.action_mainView_to_parties)
             viewModel = ViewModelProvider(this).get(MainActivityVM::class.java)
         }
         return binding.root
     }
-}
-class MainActivityVM: ViewModel(){
-    var members: MutableLiveData<List<MembersOfParliament>> = MutableLiveData()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    fun readMembers(){
-        viewModelScope.launch{
+        viewModel.readMembers()
+        viewModel.member.observe(viewLifecycleOwner) {
+            println("member changed")
+        }
+    }
+}
+class MainActivityVM: ViewModel() {
+    var member: MutableLiveData<List<MembersOfParliament>> = MutableLiveData()
+    //var members = ParliamentDB.getInstance().membersOfParliamentDAO.getAll()
+
+    fun readMembers() {
+        viewModelScope.launch {
             try {
                 val dao = ParliamentDB.getInstance().membersOfParliamentDAO
-                members.value = ParliamentApi.retrofitService.getParliamentList()
-                println("Read members from parliament with great success.")
-                members.value?.forEach {
+                member.value = ParliamentApi.retrofitService.getParliamentList()
+                println("Read members from parlament with great success.")
+                member.value?.forEach {
                     dao.insert(it)
                 }
-                println("wirtten to database")
-            } catch (e: Exception){
-                println("no luck in reading members from parliament $e")
+                println("Writen to database")
+            } catch (e: Exception) {
+                println("No luck in reading members from parlament: $e")
             }
         }
     }

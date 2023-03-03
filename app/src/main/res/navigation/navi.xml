@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi"
+    app:startDestination="@id/mainView">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.projectmiikajokinen.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/mainView"
+        android:name="com.example.projectmiikajokinen.mainView"
+        android:label="fragment_main_view"
+        tools:layout="@layout/fragment_main_view">
+        <action
+            android:id="@+id/action_mainView_to_parties"
+            app:destination="@id/parties" />
+        <action
+            android:id="@+id/action_mainView_to_everyMember"
+            app:destination="@id/everyMember" />
+    </fragment>
+    <fragment
+        android:id="@+id/everyMember"
+        android:name="com.example.projectmiikajokinen.everyMember"
+        android:label="fragment_every_member"
+        tools:layout="@layout/fragment_every_member">
+        <action
+            android:id="@+id/action_everyMember_to_singleMember"
+            app:destination="@id/singleMember" />
+    </fragment>
+    <fragment
+        android:id="@+id/parties"
+        android:name="com.example.projectmiikajokinen.parties"
+        android:label="fragment_parties"
+        tools:layout="@layout/fragment_parties">
+        <action
+            android:id="@+id/action_parties_to_partyMembers"
+            app:destination="@id/partyMembers" />
+    </fragment>
+    <fragment
+        android:id="@+id/partyMembers"
+        android:name="com.example.projectmiikajokinen.partyMembers"
+        android:label="fragment_party_members"
+        tools:layout="@layout/fragment_party_members">
+        <action
+            android:id="@+id/action_partyMembers_to_singleMember"
+            app:destination="@id/singleMember" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleMember"
+        android:name="com.example.projectmiikajokinen.singleMember"
+        android:label="fragment_single_member"
+        tools:layout="@layout/fragment_single_member">
+        <action
+            android:id="@+id/action_singleMember_to_comment"
+            app:destination="@id/comment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comment"
+        android:name="com.example.projectmiikajokinen.comment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" />
+</navigation>

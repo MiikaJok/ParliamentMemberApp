@@ -1,7 +1,6 @@
 package com.example.projectmiikajokinen
 
 import androidx.lifecycle.LiveData
-import com.example.projectmiikajokinen.ParliamentDB
 
 object ParliamentRepo {
     private val dao = ParliamentDB.getInstance().membersOfParliamentDAO

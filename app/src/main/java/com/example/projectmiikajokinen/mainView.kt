@@ -28,6 +28,10 @@ class mainView : Fragment() {
             findNavController().navigate(R.id.action_mainView_to_parties)
             viewModel = ViewModelProvider(this).get(MainActivityVM::class.java)
         }
+        binding.buttonAllMembers.setOnClickListener {
+            findNavController().navigate(R.id.action_mainView_to_everyMember)
+            viewModel = ViewModelProvider(this).get(MainActivityVM::class.java)
+        }
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

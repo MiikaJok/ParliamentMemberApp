@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/everyMember"
-        android:name="com.example.projectmiikajokinen.everyMember"
+        android:name="com.example.projectmiikajokinen.EveryMember"
         android:label="fragment_every_member"
         tools:layout="@layout/fragment_every_member">
         <action

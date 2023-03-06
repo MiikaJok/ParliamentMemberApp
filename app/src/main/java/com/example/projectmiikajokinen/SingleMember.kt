@@ -23,6 +23,7 @@ class SingleMember : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        //haetaan jäsenen id argumenttien perusteella
         val rightId = args.member.split(":").last()
         Log.d("QQ", rightId)
         Log.d("QQ", args.toString())
@@ -30,6 +31,7 @@ class SingleMember : Fragment() {
         Log.d("QWERTY", viewModel.toString())
         binding = FragmentSingleMemberBinding.inflate(layoutInflater)
         viewModel.members.observe(viewLifecycleOwner){
+            //Asettaa tiedon textviewiin ja poistaa "[" alusta ja "]" lopusta
             binding.memberText.text = it.toString().removePrefix("[").removeSuffix("]")
         }
         return binding.root

@@ -5,23 +5,30 @@
     android:id="@+id/ConstraintLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:background="#dcdcde"
     tools:context=".SingleMember">
 
 
     <TextView
         android:id="@+id/memberText"
-        android:layout_width="320dp"
-        android:layout_height="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="100dp"
         android:layout_marginBottom="35dp"
+        android:background="#787c82"
+        android:textAlignment="center"
+        android:textColor="#101517"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/memberImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <ImageView
         android:id="@+id/memberImage"
@@ -33,6 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.701"
+        android:src="@drawable/retro"
         tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,9 @@
     android:id="@+id/ConstraintLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:background="#dcdcde"
     tools:context=".EveryMember">
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleEveryMember"
